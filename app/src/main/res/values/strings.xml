@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">AniLore</string>
+
+    <string-array name="onboarding_title">
+        <item>Akses ke Ribuan Anime</item>
+        <item>Streaming Berkualitas Tinggi</item>
+        <item>Pengalaman Tanpa Iklan</item>
+        <item>Komunitas Penggemar Anime</item>
+    </string-array>
+
+    <string-array name="onboarding_description">
+        <item>Nikmati akses tak terbatas ke ribuan judul anime dari berbagai genre</item>
+        <item>Nikmati pengalaman menonton yang optimal dengan streaming berkualitas tinggi</item>
+        <item>Tidak ada gangguan iklan yang mengganggu saat menonton anime favorit Anda.</item>
+        <item>Bergabunglah dengan komunitas penggemar anime kami di aplikasi ini.</item>
+    </string-array>
 </resources>
