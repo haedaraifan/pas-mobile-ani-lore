@@ -1,5 +1,7 @@
 package com.example.ani_lore.api.jikan.response;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class DataItem{
@@ -11,6 +13,7 @@ public class DataItem{
 	private int scoredBy;
 	private List<Object> titleSynonyms;
 	private String source;
+	@SerializedName("title")
 	private String title;
 	private String type;
 	private Trailer trailer;
