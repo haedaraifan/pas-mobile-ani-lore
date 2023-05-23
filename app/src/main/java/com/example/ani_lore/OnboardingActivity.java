@@ -31,7 +31,7 @@ public class OnboardingActivity extends AppCompatActivity {
         paperOnboardingFragment.setOnRightOutListener(new PaperOnboardingOnRightOutListener() {
             @Override
             public void onRightOut() {
-                startActivity(new Intent(OnboardingActivity.this, MainActivity.class));
+                startActivity(new Intent(OnboardingActivity.this, LoginActivity.class));
             }
         });
     }
