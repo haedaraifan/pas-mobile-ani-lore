@@ -1,5 +1,7 @@
 package com.example.ani_lore.adapter;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ani_lore.DetailActivity;
 import com.example.ani_lore.R;
 import com.example.ani_lore.api.jikan.response.DataItem;
 import com.squareup.picasso.Picasso;
@@ -46,8 +49,9 @@ public class VerticalItemAdapter extends RecyclerView.Adapter<VerticalItemAdapte
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
 
-        String title = localDataSet.get(position).getTitle();
-        String imageUrl = localDataSet.get(position).getImages().getJpg().getLargeImageUrl();
+        DataItem dataItem = localDataSet.get(position);
+        String title = dataItem.getTitle();
+        String imageUrl = dataItem.getImages().getJpg().getLargeImageUrl();
 
         viewHolder.tvAnimeTitle.setText(title);
 
@@ -56,6 +60,15 @@ public class VerticalItemAdapter extends RecyclerView.Adapter<VerticalItemAdapte
                 .placeholder(R.drawable.image_placeholder)
                 .error(R.drawable.image_placeholder_error)
                 .into(viewHolder.ivAnimePoster);
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(viewHolder.itemView.getContext(), DetailActivity.class);
+                intent.putExtra("anime_id", String.valueOf(dataItem.getMalId()));
+                viewHolder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

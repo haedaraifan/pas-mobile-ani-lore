@@ -1,5 +1,6 @@
 package com.example.ani_lore.api.jikan;
 
+import com.example.ani_lore.api.jikan.response.JikanDetailResponseBody;
 import com.example.ani_lore.api.jikan.response.JikanResponseBody;
 
 import retrofit2.Call;
@@ -19,5 +20,5 @@ public interface JikanApiService {
     Call<JikanResponseBody> getAnimeSearch(@Query("q") String animeTitle);
 
     @GET("anime/{id}")
-    Call<JikanResponseBody> getAnimeById(@Path("id") String animeId);
+    Call<JikanDetailResponseBody> getAnimeById(@Path("id") String animeId);
 }

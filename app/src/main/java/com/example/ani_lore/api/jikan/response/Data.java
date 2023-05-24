@@ -4,11 +4,12 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class DataItem{
+public class Data{
 	@SerializedName("title_japanese")
 	private String titleJapanese;
 	private int favorites;
 	private Broadcast broadcast;
+	@SerializedName("year")
 	private int year;
 	private String rating;
 	private int scoredBy;
@@ -19,7 +20,8 @@ public class DataItem{
 	private String type;
 	private Trailer trailer;
 	private String duration;
-	private Object score;
+	@SerializedName("score")
+	private double score;
 	private List<ThemesItem> themes;
 	private boolean approved;
 	private List<GenresItem> genres;
@@ -29,13 +31,14 @@ public class DataItem{
 	private int rank;
 	private String season;
 	private boolean airing;
-	private Object episodes;
+	@SerializedName("episodes")
+	private int episodes;
 	private Aired aired;
 	private Images images;
 	private List<StudiosItem> studios;
-	@SerializedName("mal_id")
 	private int malId;
 	private List<TitlesItem> titles;
+	@SerializedName("synopsis")
 	private String synopsis;
 	private List<Object> explicitGenres;
 	private List<LicensorsItem> licensors;

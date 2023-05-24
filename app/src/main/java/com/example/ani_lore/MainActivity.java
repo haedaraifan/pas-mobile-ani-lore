@@ -42,13 +42,13 @@ public class MainActivity extends AppCompatActivity {
         getTopAnime();
         getOnGoingAnime();
 
-        binding.btnLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                preferences.setSessionLogin(false);
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            }
-        });
+//        binding.btnLogOut.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                preferences.setSessionLogin(false);
+//                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+//            }
+//        });
     }
 
     private void getTopAnime() {
