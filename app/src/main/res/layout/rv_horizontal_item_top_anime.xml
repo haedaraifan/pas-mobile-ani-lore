@@ -4,28 +4,64 @@
     android:layout_height="190dp"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/rounded_1">
+    android:background="@drawable/rounded_1"
+    >
 
-    <ImageView
-        android:id="@+id/iv_anime_poster"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        tools:src="@tools:sample/avatars"
-        android:background="@drawable/rounded_1"/>
+        android:background="@drawable/rounded_2"
+        android:backgroundTint="@color/black"
+        android:backgroundTintMode="screen">
+        <ImageView
+            android:id="@+id/iv_anime_poster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars"
+            android:background="@drawable/rounded_3"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="160dp">
+            <ImageView
+                android:layout_width="19dp"
+                android:layout_height="17dp"
+                android:src="@drawable/star_pink"
+                tools:layout_editor_absoluteX="163dp"
+                tools:layout_editor_absoluteY="2dp" />
+            <TextView
+                android:id="@+id/rating_poster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00.0"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/iv_anime_poster"
+                android:fontFamily="@font/medium"/>
 
-    <TextView
-        android:id="@+id/tv_anime_title"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/iv_anime_poster"
-        app:layout_constraintBottom_toBottomOf="@id/iv_anime_poster"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="14dp"
-        tools:text="@tools:sample/full_names"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:maxLines="2"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_anime_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="14dp"
+            android:maxLines="2"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_anime_poster"
+            app:layout_constraintStart_toStartOf="@id/iv_anime_poster"
+            android:layout_marginTop="150dp"
+            tools:text="@tools:sample/full_names"
+            android:fontFamily="@font/medium"/>
+
+
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

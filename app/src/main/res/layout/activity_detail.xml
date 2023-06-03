@@ -81,7 +81,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_anime_release_year"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="Rilis"
+                    android:text="Release"
                     android:textColor="@color/white"
                     android:textSize="22sp"
                     android:textStyle="normal"/>
@@ -166,7 +166,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/cl_rating"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginTop="12dp"
-                android:text="Sinopsis :"
+                android:text="Synopsis :"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="30sp"/>

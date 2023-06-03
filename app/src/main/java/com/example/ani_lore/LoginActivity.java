@@ -61,12 +61,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        binding.btnSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
-            }
-        });
+//        binding.btnSignUp.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+//            }
+//        });
     }
 
     private void loginProcess() {

@@ -36,7 +36,7 @@ public class SignUpActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        binding.btnSignUp.setOnClickListener(new View.OnClickListener() {
+        binding.registerTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fullName = binding.edFullName.getText().toString();
