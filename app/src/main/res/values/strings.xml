@@ -1,18 +1,26 @@
 <resources>
     <string name="app_name">AniLore</string>
     <string name="login">Login</string>
-    <string name="username">username</string>
-    <string name="password">password</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
     <string name="login_desc">Login for better experience</string>
-    <string name="forget_password"> <u>Forget password?</u></string>
+    <string name="forget_password">Forget password?</string>
     <string name="dont_have_acc">Dont have account?</string>
-    <string name="sign_up_undrln"><u><b> Sign Up </b></u></string>
+    <string name="sign_up"><b>Sign Up</b></string>
     <string name="or_login_with">Or login with</string>
-    <string name="permission_register">By creating an account you must agree with <u><b><font color="#FE0078">Our Terms and Conditions</font></b></u></string>
+    <string name="permission_register">By creating an account you must agree with <b><font color="#FE0078">Our Terms and Conditions</font></b></string>
     <string name="register_txt"><b>Register</b></string>
     <string name="register_desc">Register for better experience</string>
     <string name="already_have_acc">Already have account?</string>
-    <string name="login_undrln"><u>Login</u></string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="register">Register</string>
+    <string name="log_out">Log out</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="sample_score">0.00</string>
 
 
     <string name="gretings_ohayou">Ohayou,</string>
@@ -34,4 +42,13 @@
         <item>Tidak ada gangguan iklan yang mengganggu saat menonton anime favorit Anda.</item>
         <item>Bergabunglah dengan komunitas penggemar anime kami di aplikasi ini.</item>
     </string-array>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

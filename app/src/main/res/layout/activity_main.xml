@@ -9,7 +9,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -31,11 +33,11 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
                 android:orientation="vertical"
 
-                app:layout_constraintTop_toTopOf="@id/logo_mini"
-                tools:layout_editor_absoluteX="2dp">
+                app:layout_constraintTop_toBottomOf="@id/logo_mini"
+                tools:layout_editor_absoluteX="2dp"
+                tools:ignore="MissingConstraints">
 
                 <TextView
                     android:id="@+id/ohayou_txt"
@@ -44,7 +46,7 @@
                     android:fontFamily="@font/medium"
                     android:text="@string/gretings_ohayou"
                     android:textColor="@color/white"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/name_greeting"
@@ -53,7 +55,7 @@
                     android:fontFamily="@font/medium"
                     android:text="@string/greetings_name"
                     android:textColor="@color/white"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -89,7 +91,7 @@
                     android:fontFamily="@font/medium"
                     android:text="@string/new_anime_txt"
                     android:textColor="@color/white"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -114,18 +116,22 @@
                 tools:layout_editor_absoluteX="-7dp"
                 tools:listitem="@layout/rv_vertical_item_season_anime" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_log_out"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/rv_vertical_item"
-                android:layout_marginTop="12dp"
-                android:text="Log out"/>
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingVertical="2dp"
+
+        android:background="@drawable/bottom_navbar_background"
+        app:menu="@menu/bottom_navbar_menu"
+        app:itemIconSize="40dp"
+        app:itemIconTint="@drawable/bottom_navbar_selector"
+        app:itemRippleColor="@color/transparent"
+        app:labelVisibilityMode="unlabeled"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,38 @@
         tools:src="@tools:sample/avatars"
         android:background="@drawable/rounded_1"/>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/score_background"
+        android:paddingTop="4dp"
+        android:paddingHorizontal="8dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="19dp"
+            android:layout_height="17dp"
+            android:src="@drawable/star_pink"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="2dp"
+            android:layout_marginEnd="4dp"/>
+        <TextView
+            android:id="@+id/tv_anime_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/iv_anime_poster"
+            android:fontFamily="@font/medium"
+            android:text="@string/sample_score"/>
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/tv_anime_title"
         android:layout_width="160dp"

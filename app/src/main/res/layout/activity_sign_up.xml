@@ -27,22 +27,21 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="30dp"
     android:layout_marginEnd="30dp"
-    android:background="@color/blue_191C44"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_1"
-            android:backgroundTint="@color/blue_191C44"
             android:gravity="center"
             android:orientation="vertical"
             android:paddingHorizontal="20dp"
             android:paddingTop="40dp">
 
-            <Button
+            <TextView
                 android:id="@+id/register_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,18 +58,23 @@
                 android:text="@string/register_desc"
                 android:textColor="@color/white"
                 android:textSize="15sp"/>
+
             <EditText
                 android:id="@+id/ed_full_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@+id/ed_username"
                 android:layout_marginTop="15dp"
-                android:paddingVertical="10dp"
-                android:paddingHorizontal="12dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
                 android:background="@drawable/rounded_1"
 
+                android:inputType="text"
                 android:backgroundTint="@color/white"
-                android:hint="Full name"/>
+                android:hint="@string/full_name"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_gray"/>
 
             <EditText
                 android:id="@+id/ed_username"
@@ -78,12 +82,16 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@+id/ed_email"
                 android:layout_marginTop="10dp"
-                android:paddingVertical="10dp"
-                android:paddingHorizontal="12dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
                 android:background="@drawable/rounded_1"
 
+                android:inputType="text"
                 android:backgroundTint="@color/white"
-                android:hint="userame"/>
+                android:hint="@string/username"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_gray"/>
 
             <EditText
                 android:id="@+id/ed_email"
@@ -91,12 +99,16 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@+id/ed_password"
                 android:layout_marginTop="10dp"
-                android:paddingVertical="10dp"
-                android:paddingHorizontal="12dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
                 android:background="@drawable/rounded_1"
 
+                android:inputType="textEmailAddress"
                 android:backgroundTint="@color/white"
-                android:hint="email"/>
+                android:hint="@string/email"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_gray"/>
 
             <EditText
                 android:id="@+id/ed_password"
@@ -104,12 +116,16 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@+id/ed_confirm_password"
                 android:layout_marginTop="10dp"
-                android:paddingVertical="10dp"
-                android:paddingHorizontal="12dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
                 android:background="@drawable/rounded_1"
 
+                android:inputType="textPassword"
                 android:backgroundTint="@color/white"
-                android:hint="password"/>
+                android:hint="@string/password"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_gray"/>
 
             <EditText
                 android:id="@+id/ed_confirm_password"
@@ -117,12 +133,37 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@+id/btn_sign_up"
                 android:layout_marginTop="10dp"
-                android:paddingVertical="10dp"
-                android:paddingHorizontal="12dp"
+                android:paddingVertical="12dp"
+                android:paddingHorizontal="16dp"
                 android:background="@drawable/rounded_1"
 
+                android:inputType="textPassword"
                 android:backgroundTint="@color/white"
-                android:hint="confirm password"/>
+                android:hint="@string/confirm_password"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_gray"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_permission"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text= "@string/permission_register"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="16dp"
+                android:text="@string/register"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/pink_FE0078"
+                android:paddingVertical="12dp"
+                app:cornerRadius="10dp"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -130,60 +171,32 @@
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                >
-
-                <CheckBox
-                    android:id="@+id/checkbox_permission"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text= "@string/permission_register"
-                    android:textColor="@color/white"/>
-            </LinearLayout>
-
-
-            <Button
-                android:id="@+id/btn_register"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-
-                android:layout_marginTop="16dp"
-                android:text="Register"
-                android:backgroundTint="@color/pink_FE0078"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginBottom="20dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:paddingStart="20dp"
 
                     android:text="@string/already_have_acc"
-                    android:textColor="@color/white" />
+                    android:textSize="14sp"
+                    android:textColor="@color/white"/>
+
                 <Button
                     android:id="@+id/btn_login"
-                    android:background="@color/transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:textAllCaps="false"
 
-                    android:text="@string/login_undrln"
+                    android:text="@string/login"
                     android:textColor="@color/pink_FE0078"
-                    android:textStyle="bold"/>
-
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    android:paddingStart="0dp"
+                    android:background="@android:color/transparent"/>
             </LinearLayout>
 
-
-            </LinearLayout>
-
-
-
-
+        </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

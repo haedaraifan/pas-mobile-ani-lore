@@ -35,13 +35,14 @@ public class HorizontalItemAdapter extends RecyclerView.Adapter<HorizontalItemAd
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final ImageView ivAnimePoster;
-        private final TextView tvAnimeTitle;
+        private final TextView tvAnimeTitle, tvAnimeScore;
 
         public ViewHolder(View view) {
             super(view);
 
             ivAnimePoster = view.findViewById(R.id.iv_anime_poster);
             tvAnimeTitle = view.findViewById(R.id.tv_anime_title);
+            tvAnimeScore = view.findViewById(R.id.tv_anime_score);
         }
     }
 
@@ -51,8 +52,10 @@ public class HorizontalItemAdapter extends RecyclerView.Adapter<HorizontalItemAd
         DataItem dataItem = localDataSet.get(position);
         String title = dataItem.getTitle();
         String imageUrl = dataItem.getImages().getJpg().getLargeImageUrl();
+        String score = String.valueOf(dataItem.getScore());
 
         viewHolder.tvAnimeTitle.setText(title);
+        viewHolder.tvAnimeScore.setText(score);
 
         Picasso.get()
                 .load(imageUrl)

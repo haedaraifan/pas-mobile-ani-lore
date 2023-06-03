@@ -70,10 +70,12 @@
                 android:backgroundTint="@color/white"
 
                 android:hint="@string/username"
+                android:textSize="16sp"
                 android:inputType="text"
                 android:paddingHorizontal="16dp"
                 android:paddingVertical="12dp"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_gray"/>
 
             <EditText
                 android:id="@+id/ed_password"
@@ -84,10 +86,12 @@
                 android:backgroundTint="@color/white"
 
                 android:hint="@string/password"
+                android:textSize="16sp"
                 android:inputType="textPassword"
                 android:paddingHorizontal="16dp"
                 android:paddingVertical="12dp"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                android:textColorHint="@color/light_gray"/>
 
 
 
@@ -115,6 +119,7 @@
                 android:text="@string/login"
                 android:textColor="@color/white"
                 app:cornerRadius="10dp" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -125,24 +130,23 @@
                 <TextView
                     android:id="@+id/dont_have_acc"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
 
                     android:text="@string/dont_have_acc"
-                    android:textColor="@color/white"
-                    />
+                    android:textSize="14sp"
+                    android:textColor="@color/white"/>
 
-                <TextView
-                    android:id="@+id/sign_up_underline"
+                <Button
+                    android:id="@+id/btn_sign_up"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
 
-
-                    android:text="@string/sign_up_undrln"
-                    android:textColor="@color/pink_FE0078"/>
-
-
-
+                    android:text="@string/sign_up"
+                    android:textColor="@color/pink_FE0078"
+                    android:textAllCaps="false"
+                    android:paddingStart="0dp"
+                    android:background="@android:color/transparent"/>
             </LinearLayout>
 
             <TextView

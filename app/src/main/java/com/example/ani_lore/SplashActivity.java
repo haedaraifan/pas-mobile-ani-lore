@@ -22,9 +22,11 @@ public class SplashActivity extends AppCompatActivity {
 
                 if(preferences.getSessionLogin()) {
                     startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    finish();
                 }
                 else {
                     startActivity(new Intent(SplashActivity.this, OnboardingActivity.class));
+                    finish();
                 }
             }
         }, 2000);

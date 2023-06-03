@@ -32,6 +32,7 @@ public class OnboardingActivity extends AppCompatActivity {
             @Override
             public void onRightOut() {
                 startActivity(new Intent(OnboardingActivity.this, LoginActivity.class));
+                finish();
             }
         });
     }

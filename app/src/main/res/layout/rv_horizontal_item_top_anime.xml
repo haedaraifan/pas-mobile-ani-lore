@@ -13,53 +13,68 @@
         android:background="@drawable/rounded_2"
         android:backgroundTint="@color/black"
         android:backgroundTintMode="screen">
-        <ImageView
-            android:id="@+id/iv_anime_poster"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            tools:src="@tools:sample/avatars"
-            android:background="@drawable/rounded_3"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="160dp">
+            android:layout_height="match_parent">
+
             <ImageView
-                android:layout_width="19dp"
-                android:layout_height="17dp"
-                android:src="@drawable/star_pink"
-                tools:layout_editor_absoluteX="163dp"
-                tools:layout_editor_absoluteY="2dp" />
-            <TextView
-                android:id="@+id/rating_poster"
+                android:id="@+id/iv_anime_poster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                tools:src="@tools:sample/avatars"
+                android:background="@drawable/rounded_3"/>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="00.0"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/score_background"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:paddingTop="4dp"
+                android:paddingHorizontal="8dp">
+
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="17dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/star_pink"
+                    tools:layout_editor_absoluteX="163dp"
+                    tools:layout_editor_absoluteY="2dp" />
+
+                <TextView
+                    android:id="@+id/tv_anime_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/medium"
+                    android:text="@string/sample_score"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/iv_anime_poster" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_anime_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="14dp"
+                android:maxLines="2"
                 android:textColor="@color/white"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/iv_anime_poster"
+                app:layout_constraintBottom_toBottomOf="@id/iv_anime_poster"
+                app:layout_constraintStart_toStartOf="@id/iv_anime_poster"
+                android:layout_marginTop="150dp"
+                tools:text="@tools:sample/full_names"
                 android:fontFamily="@font/medium"/>
 
-        </LinearLayout>
-
-
-        <TextView
-            android:id="@+id/tv_anime_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="14dp"
-            android:maxLines="2"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/iv_anime_poster"
-            app:layout_constraintStart_toStartOf="@id/iv_anime_poster"
-            android:layout_marginTop="150dp"
-            tools:text="@tools:sample/full_names"
-            android:fontFamily="@font/medium"/>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
