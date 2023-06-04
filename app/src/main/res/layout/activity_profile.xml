@@ -4,19 +4,295 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".ProfileActivity"
+    android:background="@color/blue_191C44"
+    >
+
+    <ImageView
+        android:id="@+id/outline_profile"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:background="@drawable/circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/profile_card"
+        app:layout_constraintBottom_toBottomOf="@id/profile_card"
+        app:layout_editor_absoluteY="42dp"
+        tools:ignore="MissingConstraints" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profile_card"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:cardCornerRadius="100dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_editor_absoluteY="50dp">
+
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile_dummy"
+        tools:layout_editor_absoluteX="117dp"
+        tools:layout_editor_absoluteY="162dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/name_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/outline_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/medium"
+        android:text="@string/user_profile"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <TextView
+        android:id="@+id/premium_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/regular"
+        android:text="@string/premium_status"
+        android:textColor="@color/gray_C6C6C6"
+        android:textSize="20dp"
+        android:paddingBottom="10dp"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="213dp" />
+
+
+    <View
+        android:id="@+id/line_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/premium_status"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/white"
+        app:layout_editor_absoluteY="340dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="271dp" />
+
+
+    <LinearLayout
+        android:id="@+id/settings_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_1"
+        android:layout_width="426dp"
+        android:layout_height="56dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="272dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="43dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/setting_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/regular"
+            android:text="Settings"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="309dp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="225dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/panah" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lines_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settings_profile"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/white" />
+
+    <LinearLayout
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lines_2"
+        android:id="@+id/member_profile"
+        android:layout_width="426dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="331dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="43dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/star_profile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/regular"
+            android:text="Become member"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="309dp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/panah" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/member_profile"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_editor_absoluteY="390dp"
+        android:background="@android:color/white" />
+
+
+    <LinearLayout
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_3"
+        android:id="@+id/theme_profile"
+        android:layout_width="426dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="391dp">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="43dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/theme_theme" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/regular"
+            android:text="Theme"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="309dp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="235dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/panah" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/theme_profile"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_editor_absoluteY="450dp"
+        android:background="@android:color/white"/>
+
+
+    <LinearLayout
+        android:id="@+id/about_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line_4"
+        android:layout_width="426dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="451dp">
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="27dp"
+            android:src="@drawable/about_profile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/regular"
+            android:text="About us"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="88dp"
+            tools:layout_editor_absoluteY="309dp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="215dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/panah" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/about_profile"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_editor_absoluteY="510dp"
+        android:background="@android:color/white"/>
 
     <Button
+
         android:id="@+id/btn_log_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="@color/pink_FE0078"
+        android:text="@string/log_out"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/line_6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        android:text="@string/log_out"
-        android:textAllCaps="false"/>
+
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintVertical_bias="0.756" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
@@ -31,5 +307,8 @@
         app:itemIconTint="@drawable/bottom_navbar_selector"
         app:itemRippleColor="@color/transparent"
         app:labelVisibilityMode="unlabeled"/>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

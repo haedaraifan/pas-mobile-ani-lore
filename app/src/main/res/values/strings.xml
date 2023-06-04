@@ -5,7 +5,7 @@
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="login_desc">Login for better experience</string>
-    <string name="forget_password">Forget password?</string>
+    <string name="forget_password"><u>Forget password?</u></string>
     <string name="dont_have_acc">Dont have account?</string>
     <string name="sign_up"><b>Sign Up</b></string>
     <string name="or_login_with">Or login with</string>
@@ -28,6 +28,9 @@
     <string name="greetings_desc">Check out the anime we recommend for you</string>
     <string name="new_anime_txt">New Anime?</string>
     <string name="new_anime_desc">Find anime that are currently hits!</string>
+
+    <string name="user_profile">Lorem Ipsum</string>
+    <string name="premium_status">Premium</string>
 
     <string-array name="onboarding_title">
         <item>Akses ke Ribuan Anime</item>

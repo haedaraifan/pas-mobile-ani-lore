@@ -58,7 +58,8 @@
                 android:layout_height="wrap_content"
 
                 android:text="@string/login_desc"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:fontFamily="@font/regular"/>
 
 
             <EditText
@@ -104,7 +105,9 @@
                 android:text="@string/forget_password"
                 android:textColor="@color/pink_FE0078"
                 android:textStyle="bold"
-                android:layout_gravity="end"/>
+                android:layout_gravity="end"
+                android:fontFamily="@font/regular"
+                />
 
 
             <Button
@@ -132,6 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
+                    android:fontFamily="@font/regular"
 
                     android:text="@string/dont_have_acc"
                     android:textSize="14sp"
@@ -142,7 +146,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
+
                     android:text="@string/sign_up"
+                    android:fontFamily="@font/medium"
                     android:textColor="@color/pink_FE0078"
                     android:textAllCaps="false"
                     android:paddingStart="0dp"
@@ -153,6 +159,7 @@
                 android:id="@+id/or_login_with"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
 
                 android:text="@string/or_login_with"
                 android:paddingTop="9dp"

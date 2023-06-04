@@ -45,6 +45,7 @@
                 android:id="@+id/register_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/medium"
 
                 android:text="@string/register_txt"
                 android:textColor="@color/white"
@@ -54,6 +55,7 @@
                 android:id="@+id/register_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
 
                 android:text="@string/register_desc"
                 android:textColor="@color/white"
@@ -150,7 +152,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text= "@string/permission_register"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:fontFamily="@font/medium"/>
 
             <Button
                 android:id="@+id/btn_register"
@@ -178,6 +181,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="20dp"
 
+                    android:fontFamily="@font/regular"
                     android:text="@string/already_have_acc"
                     android:textSize="14sp"
                     android:textColor="@color/white"/>
@@ -186,6 +190,7 @@
                     android:id="@+id/btn_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/medium"
 
                     android:text="@string/login"
                     android:textColor="@color/pink_FE0078"
