@@ -7,12 +7,13 @@
     <string name="login_desc">Login for better experience</string>
     <string name="forget_password"><u>Forget password?</u></string>
     <string name="dont_have_acc">Dont have account?</string>
-    <string name="sign_up"><b>Sign Up</b></string>
+    <string name="sign_up"><u><b>Sign Up</b></u></string>
     <string name="or_login_with">Or login with</string>
-    <string name="permission_register">By creating an account you must agree with <b><font color="#FE0078">Our Terms and Conditions</font></b></string>
+    <string name="permission_register">By creating an account you must agree with <u><b><font color="#FE0078">Our Terms and Conditions</font></b></u></string>
     <string name="register_txt"><b>Register</b></string>
     <string name="register_desc">Register for better experience</string>
     <string name="already_have_acc">Already have account?</string>
+    <string name="login_bold"><u><b>Login</b></u></string>
     <string name="full_name">Full Name</string>
     <string name="email">Email</string>
     <string name="register">Register</string>

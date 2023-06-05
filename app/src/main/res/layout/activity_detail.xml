@@ -17,6 +17,7 @@
             android:padding="12dp">
 
             <TextView
+                android:fontFamily="@font/medium"
                 android:id="@+id/tv_anime_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -30,6 +31,7 @@
                 android:textSize="26sp"/>
 
             <TextView
+                android:fontFamily="@font/regular"
                 android:id="@+id/tv_anime_title_jp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -76,6 +78,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:fontFamily="@font/medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/tv_anime_release_year"
@@ -113,6 +116,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:fontFamily="@font/medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/tv_anime_rating"
@@ -147,6 +151,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:fontFamily="@font/medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/tv_anime_total_episode"
@@ -160,6 +165,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
+                android:fontFamily="@font/medium"
                 android:id="@+id/tv_sinopsis_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -172,6 +178,7 @@
                 android:textSize="30sp"/>
 
             <TextView
+                android:fontFamily="@font/regular"
                 android:id="@+id/tv_sinopsis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
