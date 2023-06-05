@@ -42,10 +42,10 @@ public class OnboardingActivity extends AppCompatActivity {
         String[] onboardingTitle = getResources().getStringArray(R.array.onboarding_title);
         String[] onboardingDescription = getResources().getStringArray(R.array.onboarding_description);
 
-        PaperOnboardingPage source1 = new PaperOnboardingPage(onboardingTitle[0], onboardingDescription[0], Color.parseColor("#191C44"), R.drawable.onboarding_1, R.drawable.ic_test);
-        PaperOnboardingPage source2 = new PaperOnboardingPage(onboardingTitle[1], onboardingDescription[1], Color.parseColor("#191C44"), R.drawable.onboarding_2, R.drawable.ic_test);
-        PaperOnboardingPage source3 = new PaperOnboardingPage(onboardingTitle[2], onboardingDescription[2], Color.parseColor("#191C44"), R.drawable.onboarding_3, R.drawable.ic_test);
-        PaperOnboardingPage source4 = new PaperOnboardingPage(onboardingTitle[3], onboardingDescription[3], Color.parseColor("#191C44"), R.drawable.onboarding_4, R.drawable.ic_test);
+        PaperOnboardingPage source1 = new PaperOnboardingPage(onboardingTitle[0], onboardingDescription[0], Color.parseColor("#FFFFFF"), R.drawable.onboarding_1, R.drawable.ic_movie);
+        PaperOnboardingPage source2 = new PaperOnboardingPage(onboardingTitle[1], onboardingDescription[1], Color.parseColor("#FFFFFF"), R.drawable.onboarding_2, R.drawable.ic_hd);
+        PaperOnboardingPage source3 = new PaperOnboardingPage(onboardingTitle[2], onboardingDescription[2], Color.parseColor("#FFFFFF"), R.drawable.onboarding_3, R.drawable.ic_satisfied);
+        PaperOnboardingPage source4 = new PaperOnboardingPage(onboardingTitle[3], onboardingDescription[3], Color.parseColor("#FFFFFF"), R.drawable.onboarding_4, R.drawable.ic_groups);
 
         elements.add(source1);
         elements.add(source2);

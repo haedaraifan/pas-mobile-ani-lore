@@ -99,7 +99,7 @@ public class SignUpActivity extends AppCompatActivity {
                         JSONObject jsonResponse = new JSONObject(res);
 
                         boolean status = jsonResponse.getBoolean("status");
-                        String message = jsonResponse.getString("status");
+                        String message = jsonResponse.getString("message");
 
                         toastMessage(message);
 

@@ -21,11 +21,18 @@
     <string name="home">Home</string>
     <string name="search">Search</string>
     <string name="profile">Profile</string>
-    <string name="sample_score">0.00</string>
+    <string name="synopsis">Synopsis :</string>
+    <string name="release">Release</string>
+    <string name="rating">Rating</string>
+    <string name="episode">Episode</string>
+    <string name="sample_year">xxxx</string>
+    <string name="sample_episode">x</string>
+    <string name="sample_score">x.xx</string>
 
 
     <string name="gretings_ohayou">Ohayou,</string>
-    <string name="greetings_name">Lorem-san!</string>
+    <string name="greetings_name">Lorem</string>
+    <string name="greetings_formality">-san!</string>
     <string name="greetings_desc">Check out the anime we recommend for you</string>
     <string name="new_anime_txt">New Anime?</string>
     <string name="new_anime_desc">Find anime that are currently hits!</string>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.ani_lore.api.jikan.JikanApiClient;
@@ -37,6 +38,14 @@ public class DetailActivity extends AppCompatActivity {
         String animeId = intent.getStringExtra("anime_id");
 
         getDetailAnime(animeId);
+
+        binding.btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailActivity.this, MainActivity.class));
+                finish();
+            }
+        });
     }
 
     private void getDetailAnime(String animeId) {
@@ -72,13 +81,15 @@ public class DetailActivity extends AppCompatActivity {
         String episodes = String.valueOf(data.getEpisodes());
         String synopsis = data.getSynopsis();
 
-
         binding.tvAnimeTitle.setText(title);
         binding.tvAnimeTitleJp.setText(titleJp);
-        binding.tvAnimeReleaseYear.setText(releaseYear);
         binding.tvAnimeRating.setText(score);
         binding.tvAnimeTotalEpisode.setText(episodes);
-        binding.tvSinopsis.setText(synopsis);
+        binding.tvSynopsis.setText(synopsis);
+
+        if(!releaseYear.equals("0")) {
+            binding.tvAnimeReleaseYear.setText(releaseYear);
+        }
 
         Picasso.get()
                 .load(imageUrl)

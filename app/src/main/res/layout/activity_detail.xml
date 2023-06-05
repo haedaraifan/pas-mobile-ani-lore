@@ -14,16 +14,29 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp">
+            android:paddingBottom="12dp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_anime_title"
+                android:layout_marginTop="12dp"
+
+                android:background="@drawable/back"/>
 
             <TextView
                 android:fontFamily="@font/medium"
                 android:id="@+id/tv_anime_title"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_back"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="12dp"
+
                 tools:text="@tools:sample/full_names"
                 android:textColor="@color/white"
                 android:textAlignment="center"
@@ -31,15 +44,16 @@
                 android:textSize="26sp"/>
 
             <TextView
-                android:fontFamily="@font/regular"
                 android:id="@+id/tv_anime_title_jp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/tv_anime_title"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="@id/tv_anime_title"
+                app:layout_constraintEnd_toEndOf="@id/tv_anime_title"
+                android:layout_marginTop="8dp"
+
                 tools:text="@tools:sample/full_names"
+                android:fontFamily="@font/regular"
                 android:textColor="@color/white"
                 android:textAlignment="center"
                 android:textStyle="normal"
@@ -52,18 +66,22 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_anime_title_jp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+
                 android:layout_marginTop="12dp"
                 android:scaleType="centerCrop"
                 tools:src="@tools:sample/avatars"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_release"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="@+id/cl_rating"
                 app:layout_constraintStart_toStartOf="@+id/tv_anime_title"
+
                 android:background="@drawable/rounded_2"
                 android:paddingHorizontal="12dp"
-                android:paddingVertical="8dp">
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp">
 
                 <TextView
                     android:id="@+id/tv_anime_release_year"
@@ -72,7 +90,8 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="0000"
+
+                    android:text="@string/sample_year"
                     android:textColor="@color/pink_FE0078"
                     android:textSize="26sp"
                     android:textStyle="bold"/>
@@ -84,7 +103,8 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_anime_release_year"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="Release"
+
+                    android:text="@string/release"
                     android:textColor="@color/white"
                     android:textSize="22sp"
                     android:textStyle="normal"/>
@@ -98,10 +118,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/iv_anime_poster"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="12dp"
+
+                android:layout_marginTop="24dp"
                 android:background="@drawable/rounded_2"
                 android:paddingHorizontal="12dp"
-                android:paddingVertical="8dp">
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp">
 
                 <TextView
                     android:id="@+id/tv_anime_rating"
@@ -110,7 +132,8 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="0.00"
+
+                    android:text="@string/sample_score"
                     android:textColor="@color/pink_FE0078"
                     android:textSize="26sp"
                     android:textStyle="bold"/>
@@ -122,7 +145,8 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_anime_rating"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="Rating"
+
+                    android:text="@string/rating"
                     android:textColor="@color/white"
                     android:textSize="22sp"
                     android:textStyle="normal"/>
@@ -130,13 +154,16 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_episode"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="@+id/cl_rating"
                 app:layout_constraintEnd_toEndOf="@+id/tv_anime_title"
+
                 android:background="@drawable/rounded_2"
                 android:paddingHorizontal="12dp"
-                android:paddingVertical="8dp">
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp">
 
                 <TextView
                     android:id="@+id/tv_anime_total_episode"
@@ -145,7 +172,8 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="0"
+
+                    android:text="@string/sample_episode"
                     android:textColor="@color/pink_FE0078"
                     android:textSize="26sp"
                     android:textStyle="bold"/>
@@ -157,33 +185,68 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_anime_total_episode"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:text="Episode"
+
+                    android:text="@string/episode"
                     android:textColor="@color/white"
                     android:textSize="22sp"
                     android:textStyle="normal"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <ImageView
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                app:layout_constraintBottom_toTopOf="@+id/cl_release"
+                app:layout_constraintStart_toStartOf="@+id/cl_release"
+                app:layout_constraintEnd_toEndOf="@+id/cl_release"
+                android:layout_marginBottom="-14dp"
+
+                android:src="@drawable/calender"/>
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/cl_rating"
+                app:layout_constraintStart_toStartOf="@+id/cl_rating"
+                app:layout_constraintEnd_toEndOf="@+id/cl_rating"
+                android:layout_marginBottom="-20dp"
+
+                android:src="@drawable/star"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="24dp"
+                app:layout_constraintBottom_toTopOf="@+id/cl_episode"
+                app:layout_constraintStart_toStartOf="@+id/cl_episode"
+                app:layout_constraintEnd_toEndOf="@+id/cl_episode"
+                android:layout_marginBottom="-14dp"
+
+                android:src="@drawable/play"/>
+
             <TextView
                 android:fontFamily="@font/medium"
-                android:id="@+id/tv_sinopsis_header"
+                android:id="@+id/tv_synopsis_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/cl_rating"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_anime_title"
                 android:layout_marginTop="12dp"
-                android:text="Synopsis :"
+
+                android:text="@string/synopsis"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="30sp"/>
 
             <TextView
                 android:fontFamily="@font/regular"
-                android:id="@+id/tv_sinopsis"
-                android:layout_width="match_parent"
+                android:id="@+id/tv_synopsis"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/tv_sinopsis_header"
+                app:layout_constraintTop_toBottomOf="@+id/tv_synopsis_header"
+                app:layout_constraintStart_toStartOf="@id/tv_anime_title"
+                app:layout_constraintEnd_toEndOf="@id/tv_anime_title"
                 android:layout_marginTop="8dp"
+
                 android:textColor="@color/white"
                 android:textStyle="normal"
                 android:textSize="14sp"/>

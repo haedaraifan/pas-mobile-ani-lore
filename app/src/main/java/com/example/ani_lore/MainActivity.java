@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -18,6 +20,8 @@ import com.example.ani_lore.api.jikan.JikanApiService;
 import com.example.ani_lore.api.jikan.response.DataItem;
 import com.example.ani_lore.api.jikan.response.JikanResponseBody;
 import com.example.ani_lore.databinding.ActivityMainBinding;
+import com.example.ani_lore.db.AppDatabase;
+import com.example.ani_lore.db.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
@@ -29,6 +33,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private ProgressDialog progressDialog;
+    private AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "user-login").allowMainThreadQueries().build();
+
+        List<User> users = db.userDao().getAll();
+        if(!users.isEmpty()) {
+            binding.nameGreeting.setText(users.get(0).username);
+        }
 
         binding.rvHorizontalItem.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
         binding.rvVerticalItem.setLayoutManager(new GridLayoutManager(this, 2));
@@ -54,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                     return true;
                 case R.id.profile:
+
+                    Log.d("ACTIVITY", "go to profile");
+
                     startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                     finish();
                     return true;

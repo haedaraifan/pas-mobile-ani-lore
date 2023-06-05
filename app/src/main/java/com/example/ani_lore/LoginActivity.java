@@ -1,16 +1,20 @@
 package com.example.ani_lore;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.ani_lore.api.login.LoginApiClient;
 import com.example.ani_lore.api.login.LoginApiService;
 import com.example.ani_lore.databinding.ActivityLoginBinding;
+import com.example.ani_lore.db.AppDatabase;
+import com.example.ani_lore.db.User;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
     private ProgressDialog progressDialog;
     private Preferences preferences;
+    private AppDatabase db;
     private String username, password;
 
     @Override
@@ -34,6 +39,9 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class, "user-login").allowMainThreadQueries().build();
 
         preferences = new Preferences(this);
         if(preferences.getSessionLogin()) {
@@ -46,7 +54,12 @@ public class LoginActivity extends AppCompatActivity {
                 username = binding.edUsername.getText().toString();
                 password = binding.edPassword.getText().toString();
 
+                Log.d("USERNAME", username);
+
                 if(username.equals("admin") && password.equals("admin")) {
+
+                    insertUserDb(username);
+
                     preferences.setSessionLogin(true);
                     goToMainActivity();
                     return;
@@ -100,7 +113,11 @@ public class LoginActivity extends AppCompatActivity {
                         toastMessage(message);
 
                         if(status) {
+
+                            insertUserDb(username);
+
                             preferences.setSessionLogin(true);
+
                             goToMainActivity();
                         }
                     } catch (JSONException e) {
@@ -114,6 +131,13 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void insertUserDb(String username) {
+        User user = new User();
+        user.username = username;
+        user.profilePicUrl = null;
+        db.userDao().insert(user);
     }
 
     private void toastMessage(String value) {
