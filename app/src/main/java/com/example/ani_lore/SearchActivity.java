@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.ani_lore.adapter.VerticalItemAdapter;
 import com.example.ani_lore.api.jikan.JikanApiClient;
@@ -81,7 +82,6 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onResponse(retrofit2.Call<JikanResponseBody> call, Response<JikanResponseBody> response) {
                 progressDialog.dismiss();
-                Log.d("DISMISS", "dismiss");
 
                 List<DataItem> dataItems = response.body().getData();
                 VerticalItemAdapter adapter = new VerticalItemAdapter(dataItems);
@@ -90,7 +90,8 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<JikanResponseBody> call, Throwable t) {
-
+                progressDialog.dismiss();
+                Toast.makeText(SearchActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }

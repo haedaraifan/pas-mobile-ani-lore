@@ -114,7 +114,7 @@ public class SignUpActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-
+                toastMessage("Something went wrong...Please try later!");
             }
         });
     }

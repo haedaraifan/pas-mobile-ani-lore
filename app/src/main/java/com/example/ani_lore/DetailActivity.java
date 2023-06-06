@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.ani_lore.api.jikan.JikanApiClient;
 import com.example.ani_lore.api.jikan.JikanApiService;
@@ -67,7 +68,8 @@ public class DetailActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<JikanDetailResponseBody> call, Throwable t) {
-
+                progressDialog.dismiss();
+                Toast.makeText(DetailActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }

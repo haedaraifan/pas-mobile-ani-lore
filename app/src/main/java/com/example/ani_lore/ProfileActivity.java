@@ -11,12 +11,20 @@ import android.view.View;
 import com.example.ani_lore.databinding.ActivityProfileBinding;
 import com.example.ani_lore.databinding.ActivitySearchBinding;
 import com.example.ani_lore.db.AppDatabase;
+import com.example.ani_lore.db.User;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
 
 public class ProfileActivity extends AppCompatActivity {
     private ActivityProfileBinding binding;
     private Preferences preferences;
     private AppDatabase db;
+//    private GoogleSignInOptions gso;
+//    private GoogleSignInClient gsc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,21 +33,29 @@ public class ProfileActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+//        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//                .requestEmail()
+//                .build();
+//
+//        gsc = GoogleSignIn.getClient(this, gso);
+
         db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "user-login").allowMainThreadQueries().build();
+
+        List<User> users = db.userDao().getAll();
+        if(!users.isEmpty()) {
+            binding.nameProfile.setText(users.get(0).username);
+        }
 
         preferences = new Preferences(this);
         binding.btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Log.d("LOGOUT", "logout");
-
+//                gsc.signOut();
                 db.userDao().deleteAll();
-
-                Log.d("DELETE DB", "deleted");
-
                 preferences.setSessionLogin(false);
+
                 startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
             }
         });

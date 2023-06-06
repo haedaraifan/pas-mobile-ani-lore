@@ -1,5 +1,6 @@
 package com.example.ani_lore;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
@@ -15,6 +16,12 @@ import com.example.ani_lore.api.login.LoginApiService;
 import com.example.ani_lore.databinding.ActivityLoginBinding;
 import com.example.ani_lore.db.AppDatabase;
 import com.example.ani_lore.db.User;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,6 +39,9 @@ public class LoginActivity extends AppCompatActivity {
     private Preferences preferences;
     private AppDatabase db;
     private String username, password;
+//    private GoogleSignInOptions gso;
+//    private GoogleSignInClient gsc;
+//    private static final int GOOGLE_SIGN_IN_RC = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +49,12 @@ public class LoginActivity extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+//        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN)
+//                .requestEmail()
+//                .build();
+//
+//        gsc = GoogleSignIn.getClient(this, gso);
 
         db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "user-login").allowMainThreadQueries().build();
@@ -53,8 +69,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 username = binding.edUsername.getText().toString();
                 password = binding.edPassword.getText().toString();
-
-                Log.d("USERNAME", username);
 
                 if(username.equals("admin") && password.equals("admin")) {
 
@@ -81,6 +95,13 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+//        binding.googleRounded.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                signInWithGoogle();
+//            }
+//        });
     }
 
     private void loginProcess() {
@@ -128,10 +149,35 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-
+                toastMessage("Something went wrong...Please try later!");
             }
         });
     }
+
+//    private void signInWithGoogle() {
+//        Intent signInIntent = gsc.getSignInIntent();
+//        startActivityForResult(signInIntent, GOOGLE_SIGN_IN_RC);
+//    }
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if(requestCode == GOOGLE_SIGN_IN_RC) {
+//            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+//
+//            try {
+//                GoogleSignInAccount account = task.getResult(ApiException.class);
+//
+//                insertUserDb(account.getDisplayName());
+//                preferences.setSessionLogin(true);
+//
+//                goToMainActivity();
+//            } catch (ApiException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
     private void insertUserDb(String username) {
         User user = new User();

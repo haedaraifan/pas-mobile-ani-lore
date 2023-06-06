@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.ani_lore.adapter.HorizontalItemAdapter;
 import com.example.ani_lore.adapter.VerticalItemAdapter;
@@ -22,6 +23,9 @@ import com.example.ani_lore.api.jikan.response.JikanResponseBody;
 import com.example.ani_lore.databinding.ActivityMainBinding;
 import com.example.ani_lore.db.AppDatabase;
 import com.example.ani_lore.db.User;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
@@ -67,9 +71,6 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                     return true;
                 case R.id.profile:
-
-                    Log.d("ACTIVITY", "go to profile");
-
                     startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                     finish();
                     return true;
@@ -98,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<JikanResponseBody> call, Throwable t) {
-
+                progressDialog.dismiss();
+                Toast.makeText(MainActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -118,7 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<JikanResponseBody> call, Throwable t) {
-
+                progressDialog.dismiss();
+                Toast.makeText(MainActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
