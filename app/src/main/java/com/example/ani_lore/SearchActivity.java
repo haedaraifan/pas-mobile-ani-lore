@@ -81,11 +81,10 @@ public class SearchActivity extends AppCompatActivity {
         call.enqueue(new Callback<JikanResponseBody>() {
             @Override
             public void onResponse(retrofit2.Call<JikanResponseBody> call, Response<JikanResponseBody> response) {
-                progressDialog.dismiss();
-
                 List<DataItem> dataItems = response.body().getData();
                 VerticalItemAdapter adapter = new VerticalItemAdapter(dataItems);
                 binding.rvVerticalItem.setAdapter(adapter);
+                progressDialog.dismiss();
             }
 
             @Override

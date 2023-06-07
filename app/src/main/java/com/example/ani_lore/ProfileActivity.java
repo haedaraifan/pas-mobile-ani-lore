@@ -23,8 +23,6 @@ public class ProfileActivity extends AppCompatActivity {
     private ActivityProfileBinding binding;
     private Preferences preferences;
     private AppDatabase db;
-//    private GoogleSignInOptions gso;
-//    private GoogleSignInClient gsc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +30,6 @@ public class ProfileActivity extends AppCompatActivity {
         binding = ActivityProfileBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-
-//        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-//                .requestEmail()
-//                .build();
-//
-//        gsc = GoogleSignIn.getClient(this, gso);
 
         db = Room.databaseBuilder(getApplicationContext(),
                 AppDatabase.class, "user-login").allowMainThreadQueries().build();
@@ -52,7 +44,6 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-//                gsc.signOut();
                 db.userDao().deleteAll();
                 preferences.setSessionLogin(false);
 
