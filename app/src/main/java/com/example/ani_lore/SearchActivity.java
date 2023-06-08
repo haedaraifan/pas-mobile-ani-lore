@@ -90,7 +90,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<JikanResponseBody> call, Throwable t) {
                 progressDialog.dismiss();
-                Toast.makeText(SearchActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(SearchActivity.this, t.toString(), Toast.LENGTH_LONG).show();
             }
         });
     }

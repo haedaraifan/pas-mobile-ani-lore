@@ -25,9 +25,9 @@
     <string name="release">Release</string>
     <string name="rating">Rating</string>
     <string name="episode">Episode</string>
-    <string name="sample_year">xxxx</string>
-    <string name="sample_episode">x</string>
-    <string name="sample_score">x.xx</string>
+    <string name="sample_year">soon</string>
+    <string name="sample_episode">null</string>
+    <string name="sample_score">null</string>
 
     <string name="gretings_ohayou">Ohayou,</string>
     <string name="greetings_name">Lorem</string>
@@ -44,17 +44,17 @@
     <string name="about_us">About us</string>
 
     <string-array name="onboarding_title">
-        <item>Akses ke Ribuan Anime</item>
-        <item>Streaming Berkualitas Tinggi</item>
-        <item>Pengalaman Tanpa Iklan</item>
-        <item>Komunitas Penggemar Anime</item>
+        <item>Access to Thousands of Anime</item>
+        <item>High-Quality Streaming</item>
+        <item>Ad-Free Experience</item>
+        <item>Anime Fan Community</item>
     </string-array>
 
     <string-array name="onboarding_description">
-        <item>Nikmati akses tak terbatas ke ribuan judul anime dari berbagai genre</item>
-        <item>Nikmati pengalaman menonton yang optimal dengan streaming berkualitas tinggi</item>
-        <item>Tidak ada gangguan iklan yang mengganggu saat menonton anime favorit Anda.</item>
-        <item>Bergabunglah dengan komunitas penggemar anime kami di aplikasi ini.</item>
+        <item>Enjoy unlimited access to thousands of anime titles from various genres.</item>
+        <item>Experience optimal viewing with high-quality streaming.</item>
+        <item>Enjoy watching your favorite anime without any disruptive ads.</item>
+        <item>Join our anime fan community within this application.</item>
     </string-array>
     <string name="title_activity_profile">ProfileActivity</string>
     <!-- Strings used for fragments for navigation -->
